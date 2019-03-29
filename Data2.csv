@@ -1,3 +1,3 @@
 url,charactercount,characterid,planetcount,planetid,charactername,planetname,endpoint
 https://swapi.co/api/,87,1,61,1,Darth Vader,Hoth,people/0
-https://swapi.co/api/,87,2,61,3,Biggs Darklighter,EndorEndor,character/100
+https://swapi.co/api/,87,2,61,3,Biggs Darklighter,Endor,character/100
