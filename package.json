@@ -1,0 +1,12 @@
+{
+  "name": "starwar_demo",
+  "version": "1.0.0",
+  "description": "Node project to store postman collections",
+  "scripts": {
+    "api-tests": "newman run StarwarAssignment.json"
+  },
+  "author": "Preema",
+  "dependencies": {
+    "newman": "^4.4.1"
+  }
+}

@@ -1,0 +1,1 @@
+C:\Users\Joju\AppData\Roaming\npm\newman run Postman_Starwar\Starwar Assignment.json -d Postman_Starwar\Data2.csv --reporters cli,html --reporter-cli --reporter-html-export  Postman_Starwar\export.html --disable-unicode

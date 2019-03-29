@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "f1825656-a82d-4d97-808b-4ee5319d29d4",
+		"name": "Starwar Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Verify  that requset retrieves complete list of  Starwar characters",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ff461b28-cdc9-47d8-8ebf-80858f72e237",
+						"exec": [
+							"",
+							"// Test to verify request is success",
+							"",
+							"pm.test(\"Request to get list of Starwar characters is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"    ",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"console.log(\"List contains \"+ jsonData.count+ \"characters\");",
+							"",
+							"// Test verifies the number of characters in list is equal to total number of characters",
+							"",
+							"pm.test(\"List contains all the characters\", function () {",
+							"    ",
+							"      pm.expect(jsonData.count).is.equal(data.charactercount);",
+							"    ",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}people/",
+					"host": [
+						"{{url}}people"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "This test request has to retrieve all the Starwar characters\n\nGet request used -> Root:   https://swapi.co/api\n\n                    End point:/people/\n                    \nTest request should get success response \n\nThe response should contain complete list of Starwar characters."
+			},
+			"response": []
+		},
+		{
+			"name": "Verify that request  retrieves details of a specific Starwar character",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e40bddf3-9466-4359-9c99-c28676ce28a1",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1650e3ae-5f44-4f5f-81ad-14f13df00fb0",
+						"exec": [
+							"",
+							"//Test to verify the request is success",
+							"",
+							"pm.test(\"Request to get details of specific Starwar characters is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}people/{{characterid}}",
+					"host": [
+						"{{url}}people"
+					],
+					"path": [
+						"{{characterid}}"
+					]
+				},
+				"description": "This test request has to retrieve the details of the character id given in data file\n\nGet request used -> Root:   https://swapi.co/api\n\n                    End point:/people/:id\n                    \nTest request should get success response \n\nThe response list should contain details of only one Starwar characters."
+			},
+			"response": []
+		},
+		{
+			"name": "Verify that request  retrieves complete list of Starwar Planets",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e666ab43-217a-4805-8428-996a5bf43552",
+						"exec": [
+							"// Test to verify request is success",
+							"",
+							"pm.test(\"Request to get list of Starwar planets is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"console.log (\"Response contains list of \"+ jsonData.count + \" planets\");",
+							"",
+							"// Test verifies the number of characters in list is equal to total number of characters",
+							"",
+							"pm.test(\"List contains details of all the planets\", function () {",
+							"    pm.expect(jsonData.count).is.equal(data.planetcount);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}planets/",
+					"host": [
+						"{{url}}planets"
+					],
+					"path": [
+						""
+					]
+				},
+				"description": "This test request has to retrieve all the Starwar planets\n\nGet request used -> Root:   https://swapi.co/api\n\n                    End point:/planets/\n                    \nTest request should get success response \n\nThe response should contain complete list of Starwar planets."
+			},
+			"response": []
+		},
+		{
+			"name": "Verify that request  retieves details of a specific Starwar planet",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7aa6d88e-bb32-480c-b02e-6955acbf937c",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "664cf06c-706b-4780-a545-17017e547173",
+						"exec": [
+							"//Test to verify the request is success",
+							"",
+							"pm.test(\"Request to get details of specific Starwar planet is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}planets/{{planetid}}",
+					"host": [
+						"{{url}}planets"
+					],
+					"path": [
+						"{{planetid}}"
+					]
+				},
+				"description": "This test request has to retrieve the details of a specic characer using character id given in data file\n\nGet request used -> Root:   https://swapi.co/api\n\n                    End point:/planets/:id\n                    \nTest request should get success response \n\nThe response list should contain details of only one Starwar planet."
+			},
+			"response": []
+		},
+		{
+			"name": "Verify that request  searches details for specific Starwar character",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0e3ec5b2-189c-4f6d-9c4e-9f2845d96996",
+						"exec": [
+							"",
+							"// Test verifies the Request for search a character is success",
+							"pm.test(\"Request for search a character is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"// Test to verify the response contain only one character",
+							"pm.test(\"Single character details returned\", function () {",
+							"    pm.expect(jsonData.count).to.eql(1);",
+							"    ",
+							"});",
+							"",
+							"// Test to verify details in response is  same as that of the character given as search parameter by comparing character names in request and response",
+							"",
+							"pm.test(\"Deatils in response corresponds to the searched planet \", function () {",
+							"    ",
+							"    console.log(\"Name of the planet in the request \"+ data[\"charactername\"]);",
+							"    console.log(\"Name of the planet in the response \" + jsonData.results[0].name);",
+							"    ",
+							"    pm.expect(jsonData.results[0].name)===data.charactername;",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}people/?search={{charactername}}",
+					"host": [
+						"{{url}}people"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{{charactername}}"
+						}
+					]
+				},
+				"description": "This test request has to search details of specific Starwar characters\n\nGet request used -> Root:   https://swapi.co/api\n\n                    End point:/people/?search=value\n                    \nTest request should get success response \n\nThe response should contain only one Starwar characters.\n\nThe character details in response should corresponds to the character given as search parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify that request  searches  for specific Starwar planet",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a50b8144-ab96-4f90-88d3-ca8cc86b3008",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3acdf7ab-921f-4d3b-9882-98421890c9a9",
+						"exec": [
+							"// Test to verify request for search a planet is success",
+							"",
+							"pm.test(\"Request for search a planet is success\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"let jsonData = pm.response.json();",
+							"",
+							"//Test to verify the list contains details of only one planet",
+							"",
+							"pm.test(\"Single planet details returned\", function () {",
+							"    console.log(\"Number of planet present in response \"+jsonData.count);",
+							"    pm.expect(jsonData.count).to.eql(1);",
+							"    ",
+							"});",
+							"",
+							"// Test to verify details in response is  same as that of the planet given as search parameter by comparing planet names in request and response",
+							"",
+							"pm.test(\"Deatils in response corresponds to the searched planet \", function () {",
+							"    ",
+							"    console.log(\"Name of the planet in the request \"+ data[\"planetname\"]);",
+							"    console.log(\"Name of the planet in the response \" + jsonData.results[0].name);",
+							"    ",
+							"    pm.expect(jsonData.results[0].name)===data.planetname;",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}planets/?search={{planetname}}",
+					"host": [
+						"{{url}}planets"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "{{planetname}}"
+						}
+					]
+				},
+				"description": "This test request has to retrieve details of specific Starwar planet\n\nGet request used -> Root:   https://swapi.co/api\n\n                    End point:/planet/?search=value\n                    \nTest request should get success response \n\nThe response should contain only one Starwar planet.\n\nThe planet details in response should corresponds to the planet given as search parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "Verify  response by sending request with  invalid end points",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "549629e5-01c7-4120-ae68-f83ed1868f5b",
+						"exec": [
+							"//Test verifies invalid endpoints gives status Not found(404)",
+							"",
+							"pm.test(\"Details not found\", function () {",
+							"    ",
+							"    pm.response.to.be.notFound;",
+							"    console.log(pm.response.code);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}{{endpoint}}",
+					"host": [
+						"{{url}}{{endpoint}}"
+					]
+				},
+				"description": "Test Validates request with different invalid end points  provided in data file\n\nGet request used -> Root: https://swapi.co/api\n\nResponse with status code 404(Not found) has to be generated"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dffdceed-4f13-4aef-8636-64b5a8f93be4",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "52c5d89f-9bc7-4c55-a927-3ccf9379a4e5",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "db57fe4b-8375-4274-9999-45a5d586c66f",
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
